@@ -1,0 +1,62 @@
+@import url('https://fonts.bunny.net/css?family=inter:400,500,600,700|newsreader:400,600,700,400i&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Newsreader", ui-serif, Georgia, serif;
+
+  --color-obsidian: #131313;
+  --color-obsidian-light: #1f1f1f;
+  --color-amber-primary: #ffd60a;
+  --color-amber-muted: #d0c6ab;
+  --color-surface-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-obsidian text-slate-200 font-sans antialiased selection:bg-amber-primary/30 selection:text-amber-primary;
+  }
+}
+
+.glass-panel {
+  @apply bg-obsidian-light/80 backdrop-blur-xl border border-surface-border;
+}
+
+.serif-text {
+  @apply font-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.serif-text b, .serif-text strong {
+  font-weight: 700;
+  color: var(--color-amber-primary);
+}
+
+.serif-text i, .serif-text em {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.serif-text ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.serif-text li {
+  margin-bottom: 0.25rem;
+}
